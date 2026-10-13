@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>랜덤 발표자 뽑기</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <h1 class="app-title">랜덤 발표자 뽑기</h1>
+      <p class="app-subtitle">오늘의 발표자를 공정하게 뽑아보세요</p>
+    </header>
+
+    <!-- 발표자 결과를 크게 보여주는 영역 -->
+    <section class="result" aria-live="polite">
+      <p class="result-label">오늘의 발표자</p>
+      <p class="result-name is-placeholder" id="resultName">아직 안 뽑았어요</p>
+    </section>
+
+    <!-- 발표자 뽑기 / 전체 초기화 버튼 -->
+    <section class="actions">
+      <button type="button" id="pickButton" class="btn btn-primary">🎲 발표자 뽑기</button>
+      <button type="button" id="resetButton" class="btn btn-ghost">전체 초기화</button>
+    </section>
+
+    <!-- 학생 추가 입력 영역 -->
+    <section class="add-area">
+      <label class="field-label" for="nameInput">학생 이름 추가</label>
+      <div class="add-row">
+        <input type="text" id="nameInput" class="name-input" placeholder="이름을 입력하세요" autocomplete="off" maxlength="20">
+        <button type="button" id="addButton" class="btn btn-add">추가</button>
+      </div>
+    </section>
+
+    <!-- 등록된 학생 목록 -->
+    <section class="list-area">
+      <div class="list-header">
+        <h2 class="list-title">학생 목록</h2>
+        <span class="list-count" id="studentCount">0명</span>
+      </div>
+      <ul class="student-list" id="studentList" role="list"></ul>
+      <p class="empty-hint" id="emptyHint">아직 등록된 학생이 없어요. 이름을 추가해 주세요.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
